@@ -1,0 +1,23 @@
+{
+  "name": "framework7-component-loader",
+  "version": "0.1.0",
+  "description": "Framework7 single-file router component loader for Webpack",
+  "main": "lib/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/framework7io/framework7-component-loader.git"
+  },
+  "author": "Vladimir Kharlampidi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/framework7io/framework7-component-loader/issues"
+  },
+  "homepage": "https://github.com/framework7io/framework7-component-loader#readme",
+  "dependencies": {
+    "acorn": "^6.0.4",
+    "escodegen": "^1.11.0",
+    "loader-utils": "^1.1.0",
+    "template7": "^1.4.0"
+  }
+}
