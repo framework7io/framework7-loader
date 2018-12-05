@@ -1,6 +1,6 @@
 {
   "name": "framework7-component-loader",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Framework7 single-file router component loader for Webpack",
   "main": "lib/index.js",
   "scripts": {},
