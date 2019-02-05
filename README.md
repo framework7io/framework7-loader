@@ -36,7 +36,7 @@ export default {
 </script>
 ```
 #### External partial templates example (see config for location)
-```htlm
+```html
 <!-- external.f7p.html -->
 <template>
   <div>External template get scope context {{msg}}</div>
@@ -51,7 +51,7 @@ npm i framework7-component-loader
 
 ## Configuration
 
-```
+```js
 module.exports = {
   ...
   module: {
@@ -60,7 +60,7 @@ module.exports = {
       {
         test: /\.f7.html$/,
         use: [
-          'babel-loader', 
+          'babel-loader',
           {
             loader: 'framework7-component-loader',
             options: {
@@ -69,9 +69,9 @@ module.exports = {
               partialsExt: '.f7p.html'
             }
           }
-        ],      
+        ],
       },
-      
+
       ...
     ]
   }
