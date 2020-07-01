@@ -11,8 +11,7 @@
 <template>
   <div class="page">{{msg}}</div>
   <!-- Inline partials -->
-  {{> 'foo'}}
-  {{> 'bar'}}
+  {{> 'foo'}} {{> 'bar'}}
   <!-- External partials -->
   {{> 'external'}}
 </template>
@@ -26,16 +25,18 @@
 </template-partial>
 
 <script>
-export default {
-  data () {
-    return {
-      msg: 'Hello world!'
-    }
-  }
-}
+  export default {
+    data() {
+      return {
+        msg: 'Hello world!',
+      };
+    },
+  };
 </script>
 ```
+
 #### External partial templates example (see config for location)
+
 ```html
 <!-- external.f7p.html -->
 <template>
@@ -64,9 +65,14 @@ module.exports = {
           {
             loader: 'framework7-component-loader',
             options: {
+              // path to file that exports array of Template7 helpers names
               helpersPath: './src/template7-helpers-list.js',
+              // path where to look for Template7 partials
               partialsPath: './src/pages/',
-              partialsExt: '.f7p.html'
+              // Template7 partials file extension
+              partialsExt: '.f7p.html',
+              // When enabled it will minify templates HTML content
+              minifyTemplate: true,
             }
           }
         ],
@@ -79,6 +85,36 @@ module.exports = {
 }
 ```
 
-## Framework7 Webpack Template
+## Template7 Helpers
 
-There is already ready to use [Framework7 Webpack Template](https://github.com/framework7io/framework7-template-webpack) pre-configured with `framework7-component-loader`
+To use Template7 helpers, we need to specify helpers names in separate file and specify path to file in `helpersPath` loader parameter. It is required because template is compiled on server side which doesn't know about helpers registered during app runtime.
+
+So, if we use helpers named `foo` and `bar` in our templates, we need to register their names in file:
+
+```js
+/* src/template7-helpers-list.js */
+module.exports = ['foo', 'bar'];
+```
+
+And specify this file in loader options:
+
+```js
+  rules: [
+    ...
+    {
+      test: /\.f7.html$/,
+      use: [
+        'babel-loader',
+        {
+          loader: 'framework7-component-loader',
+          options: {
+            // path to file that exports array of Template7 helpers names
+            helpersPath: './src/template7-helpers-list.js',
+            // ...
+          }
+        }
+      ],
+    },
+    ...
+  ]
+```
