@@ -1,7 +1,7 @@
 {
   "name": "framework7-component-loader",
-  "version": "2.1.2",
-  "description": "Framework7 single-file router component loader for Webpack",
+  "version": "3.0.0",
+  "description": "Framework7 single-file component loader for Webpack",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint ."
@@ -18,9 +18,7 @@
   "homepage": "https://github.com/framework7io/framework7-component-loader#readme",
   "dependencies": {
     "@babel/core": "^7.10.4",
-    "html-minifier": "^4.0.0",
-    "loader-utils": "^1.2.3",
-    "template7": "^1.4.2"
+    "loader-utils": "^1.2.3"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
