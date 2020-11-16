@@ -1,6 +1,6 @@
 {
-  "name": "framework7-component-loader",
-  "version": "3.0.0",
+  "name": "framework7-loader",
+  "version": "3.0.0-beta.1",
   "description": "Framework7 single-file component loader for Webpack",
   "main": "lib/index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/framework7io/framework7-component-loader.git"
+    "url": "git+https://github.com/framework7io/framework7-loader.git"
   },
   "author": "Vladimir Kharlampidi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/framework7io/framework7-component-loader/issues"
+    "url": "https://github.com/framework7io/framework7-loader/issues"
   },
-  "homepage": "https://github.com/framework7io/framework7-component-loader#readme",
+  "homepage": "https://github.com/framework7io/framework7-loader#readme",
   "dependencies": {
     "@babel/core": "^7.10.4",
     "loader-utils": "^1.2.3"
